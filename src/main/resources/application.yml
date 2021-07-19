@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: aws-basic-service
+aws:
+  credentials:
+    # pass Access key as environment variable 
+    access-key: ${ACCESS_KEY}
+    # pass Secret key as environment variable
+    secret-key: ${SECRET_KEY}
+    # pass Region as environment variable
+    region: ${REGION}
+  services:
+    s3:      
+      destroy-s3-objects: true
+      upload-enabled: true
+      # pass file path as environment variable
+      file-path: ${FILE_PATH}
+      original-bucket-name: ${ORIGINAL_BUCKET_NAME}
+      archived-bucket-name: ${ARCHIVED_BUCKET_NAME}
+      client:
+          enabled: true
